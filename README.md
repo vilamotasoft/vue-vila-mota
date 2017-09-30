@@ -8,12 +8,12 @@
 # install dependencies
 $ npm install
 
-# serve with hot reload at localhost:8081
-$ quasar dev
+# serve with hot reload at localhost:3000
+$ npm run dev
 
 # build for production with minification
-$ quasar build
+$ npm run build
 
 # lint code
-$ quasar lint
+$ npm run lint
 ```
