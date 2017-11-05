@@ -1,18 +1,16 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import Home from '@/Home.vue'
-
 Vue.use(VueRouter)
 
 /*
  * Uncomment this section and use "load()" if you want
  * to lazy load routes.
+*/
 function load (component) {
   // '@' is aliased to src/components
-  return () => import(`@/${component}.vue`)
+  return () => System.import(`components/${component}.vue`)
 }
-*/
 
 export default new VueRouter({
   /*
@@ -28,6 +26,25 @@ export default new VueRouter({
    */
 
   routes: [
-    { path: '/', component: Home }
+    {
+      path: '/home',
+      component: load('home/Home')
+    },
+    {
+      path: '/contacts',
+      component: load('contacts/Contacts')
+    },
+    {
+      path: '/gavel',
+      component: load('gavel/Gavel')
+    },
+    {
+      path: '/input',
+      component: load('input/Input')
+    },
+    {
+      path: '/people',
+      component: load('people/People')
+    }
   ]
 })
